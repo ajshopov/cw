@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function ipToInt32(ip){
+      var address = [];
+      ip = ip.split('.')
+      ip.forEach(function(elem){
+        var binary = Number(elem).toString(2);
+        while (binary.length < 8){
+          binary = '0' + binary;
+        }
+        address.push(binary);
+      })
+      var bitNum = 0;
+      address = address.join('').split('');
+      for (var i = 0; i < address.length; i++) {
+        if (address[i] == '1'){
+          bitNum = bitNum + Math.pow(2, 31 - i)
+        }
+      }
+    return bitNum;
+    }
+
+    ipToInt32("128.32.10.1");
+
+  </script>
+</body>
+</html>

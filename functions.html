@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+
+  function calculate(numb, oper){
+    switch (oper[0]) {
+        case 'a':
+          return numb + oper[1];
+        case 's':
+          return numb - oper[1];
+        case 'm':
+          return numb * oper[1];
+        case 'd':
+          return numb / oper[1];
+      }
+  }
+
+
+    function zero(input) {
+      return (input == undefined) ? 0 : calculate(0, input);
+    }
+    function one(input) {
+      return (input == undefined) ? 1 : calculate(1, input);
+    }
+    function two(input) {
+      return (input == undefined) ? 2 : calculate(2, input);
+    }
+    function three(input) {
+      return (input == undefined) ? 3 : calculate(3, input);
+    }
+    function four(input) {
+      return (input == undefined) ? 4 : calculate(4, input);
+    }
+    function five(input) {
+      return (input == undefined) ? 5 : calculate(5, input);
+    }
+    function six(input) {
+      return (input == undefined) ? 6 : calculate(6, input);
+    }
+    function seven(input) {
+      return (input == undefined) ? 7 : calculate(7, input);
+    }
+    function eight(input) {
+      return (input == undefined) ? 8 : calculate(8, input);
+    }
+    function nine(input) {
+      return (input == undefined) ? 9 : calculate(9, input);
+    }
+
+    function plus(num) {
+      return ['a', num];
+    }
+    function minus(num) {
+      return ['s', num];
+    }
+    function times(num) {
+      return ['m', num];
+    }
+    function dividedBy(num) {
+      return ['d', num];
+    }
+
+  </script>
+</body>
+</html>

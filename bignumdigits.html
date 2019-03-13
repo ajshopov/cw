@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function nextBigger(n){
+      arr = n.toString().split('').map(Number)
+      for (var i = arr.length - 1; i > 0; i--) {
+        if(arr[i] > arr[i-1]){
+          var splitPoint = arr.splice(i, arr.length)
+          var findNext;
+          splitPoint.sort((a, b) => a - b);
+          if (splitPoint.length === 1){
+            findNext = splitPoint.shift();
+          } else {
+            for (var j = 0; j < splitPoint.length; j++) {
+              if (splitPoint[j] > arr[i-1]){
+                findNext = splitPoint.splice(j, 1);
+                break;
+              }
+            }
+          }
+          splitPoint.push(arr.pop())
+          arr = arr.concat(findNext);
+
+          splitPoint.sort((a, b) => a - b);
+          arr = arr.concat(splitPoint);
+          return Number(arr.join(''));
+          }
+      }
+      return -1;
+    }
+
+    nextBigger(82431);
+
+  </script>
+</body>
+</html>
